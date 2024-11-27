@@ -1,0 +1,7 @@
+python -m visdom.server
+
+python train.py --dataroot ./datasets/RS --name RS --model cycle_gan --display_id -1
+
+python train.py  --dataroot ./datasets/RS --name single_image_cyclegan2 --model cycle_gan --n_epochs 10 --n_epochs_decay 10 --batch_size 1 --pool_size 0 --display_freq 1 --update_html_freq 1 --display_id 1 --no_html
+
+python test.py --dataroot datasets/RS/testA --name single_image_cyclegan  --model test --no_dropout
